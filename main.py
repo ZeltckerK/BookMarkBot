@@ -9,9 +9,9 @@ import logging
 from aiogram import Dispatcher, Bot
 
 from config_reader import config
-from handlers import (start_handler, user_handlers)
+from handlers import (start_handler, user_handlers, default_handler)
 
-routers = [start_handler.router, user_handlers.router]
+routers = [start_handler.router, user_handlers.router, default_handler.router]
 
 async def main():
     bot = Bot(token=config.bot_token.get_secret_value())
